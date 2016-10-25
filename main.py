@@ -403,6 +403,9 @@ class MainFrame(wx.Frame):
         self.sizer.Add(panel, 1, wx.EXPAND)
         return panel
 
+    def AddNewPanel(self, panel, old_panel=None):
+        return panel
+
     def ShowPanel(self, panel):
         if self.active_panel:
             self.active_panel.Hide()
