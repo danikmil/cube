@@ -453,6 +453,5 @@ class MainFrame(wx.Frame):
             self.Destroy()
 
 
-
 if __name__ == '__main__':
     CubeApp().Run()
