@@ -48,6 +48,7 @@ class ImapMode(Mode):
     def set_credentials(self, login, password):
         self._login = login
         self._password = password
+        return True
 
     def loop(self):
         self._stopped = False
@@ -58,7 +59,7 @@ class ImapMode(Mode):
             try:
                 count = self._fetch_unread_count()
                 message = u"Писем: {}".format(count)
-            except imaplib.IMAP4.error as e:
+            except imaplib.IMAP4.error:
                 message = u"Неверные логин/пароль"
             except socket.error:
                 message = u"Нет соединения с сервером"
